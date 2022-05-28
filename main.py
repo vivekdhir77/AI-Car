@@ -3,27 +3,26 @@ import pygame
 import json
 from Car_object import *
 from FeedForeward import *
-database = 'database.json'
 from utils import *
 
 
+database = 'storage/database.json'
 current_generation = 0 # Generation counter
-CHILDREN_CARS = 500
 
 
 def run_simulation(total_generations):
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
     clock = pygame.time.Clock()
-    generation_font = pygame.font.SysFont("Arial", 30)
-    alive_font = pygame.font.SysFont("Arial", 20)
-    game_map = pygame.image.load('map1.png').convert() # Convert Speeds Up A Lot
+    generation_font = pygame.font.SysFont(FONT, 30)
+    alive_font = pygame.font.SysFont(FONT, 20)
+    game_map = pygame.image.load(MAP).convert() # Convert Speeds Up A Lot
 
     cars = []
     nets = []
     for i in range(CHILDREN_CARS):
         cars.append(Car())
-        nets.append(NN([5, 6, 4]))
+        nets.append(NN(NN_layers))
         
     
     for current_generation in range(total_generations):
@@ -74,7 +73,7 @@ def run_simulation(total_generations):
             screen.blit(text, text_rect)
 
             pygame.display.flip()
-            clock.tick(60) # 60 FPS
+            clock.tick(FPS) # 60 FPS
         
         Best_car = 0;
         reward = cars[0].get_reward()
@@ -100,12 +99,12 @@ def run_simulation(total_generations):
         nets = []
         for i in range(CHILDREN_CARS):
             cars.append(Car())
-            nets.append(NN([5, 6, 4]))
-            # cars[-1].speed = 28
+            nets.append(NN(NN_layers))
+
         for i in range(10,CHILDREN_CARS):
-            nets[i].mutate(nets[i], 0.15)
+            nets[i].mutate(nets[i], MUTATION_RATE)
         
 if __name__ == "__main__":
-    run_simulation(100)
+    run_simulation(MAX_GENERATIONS)
 
     

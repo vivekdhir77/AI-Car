@@ -1,4 +1,6 @@
 import pygame
+from config import *
+
 def logs(current_generation,Best_car,  nets):
     print("Generation: ", current_generation)
     print("Length: ",len(nets[Best_car].levels))
@@ -17,15 +19,15 @@ def move(cars,nets):
         # print(car.get_data())
         # print(choice)
         if choice[0] == 1 and cars[i].speed!=0:
-            cars[i].angle += 5 # Left
+            cars[i].angle += ROTATION_RATE # Left
         if choice[1] == 1 and cars[i].speed!=0:
-            cars[i].angle -= 5 # Right
+            cars[i].angle -= ROTATION_RATE # Right
         if choice[3] == 1:
             if(cars[i].speed  >= 12):
-                cars[i].speed -= 2 # Slow Down
+                cars[i].speed -= SPEED # Slow Down
         if choice[2]==1:
-            cars[i].speed += 2 # Speed Up
-            cars[i].speed = min(cars[i].speed, 8)
+            cars[i].speed += SPEED # Speed Up
+            cars[i].speed = min(cars[i].speed, MAX_SPEED)
         # if(choice[2]==0 and not cars[i].speed==0):
         #     cars[i].speed -= 1
         #     cars[i].speed = max(0, cars[i].speed);

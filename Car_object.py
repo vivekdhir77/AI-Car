@@ -7,7 +7,7 @@ class Car:
 
     def __init__(self):
         # Load Car Sprite and Rotate
-        self.sprite = pygame.image.load('carp.png').convert() # Convert Speeds Up A Lot
+        self.sprite = pygame.image.load(CAR).convert() # Convert Speeds Up A Lot
         self.sprite = pygame.transform.scale(self.sprite, (CAR_SIZE_X, CAR_SIZE_Y))
         self.rotated_sprite = self.sprite 
 
@@ -16,7 +16,7 @@ class Car:
         self.angle = 0
         self.speed = 0
 
-        self.speed_set = False # Flag For Default Speed Later on
+        self.speed_set = SPEED_OUTPUT_NODE # Flag For Default Speed Later on
 
         self.center = [self.position[0] + CAR_SIZE_X / 2, self.position[1] + CAR_SIZE_Y / 2] # Calculate Center
 
@@ -29,11 +29,10 @@ class Car:
         self.time = 0 # Time Passed
 
     def draw(self, screen):
-        screen.blit(self.rotated_sprite, self.position) # Draw Sprite
+        screen.blit(self.rotated_sprite, self.position) # Draws car
         self.draw_radar(screen) #OPTIONAL FOR SENSORS
 
-    def draw_radar(self, screen):
-        # Optionally Draw All Sensors / Radars
+    def draw_radar(self, screen): # Draws All Sensors / Radars
         for radar in self.radars:
             position = radar[0]
             pygame.draw.line(screen, (0, 255, 0), self.center, position, 1)
@@ -70,7 +69,7 @@ class Car:
         # Set The Speed To 20 For The First Time
         # Only When Having 4 Output Nodes With Speed Up and Down
         if not self.speed_set:
-            self.speed = 20
+            self.speed = MAX_SPEED
             self.speed_set = True
 
         # Get Rotated Sprite And Move Into The Right X-Direction
