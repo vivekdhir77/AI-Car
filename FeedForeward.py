@@ -3,8 +3,8 @@ import math
 class NN:
     def __init__(self, neuronCount):
         self.levels = []
-        for i in range(len(neuronCount)-1):
-            self.levels.append(Level(neuronCount[i], neuronCount[i+1]))
+        for i in range(len(neuronCount)-1): # 0 1
+            self.levels.append(Level(neuronCount[i], neuronCount[i+1], i)) # 5 6 4
         
         
     
@@ -24,7 +24,7 @@ class NN:
                     level.weights[i][j]=lerp(level.weights[i][j],random.random()*2-1,amount)
 
 class Level:
-    def __init__(self,inputCount,outputCount):
+    def __init__(self,inputCount,outputCount, ind= -1):
         self.inputs =[0 for i in range(inputCount)]
         self.outputs = [0 for i in range(outputCount)]
         self.biases = [0 for i in range(outputCount)]
@@ -37,8 +37,9 @@ class Level:
         try:
             f = open('database.json')
             data = json.load(f)
-            self.weights = data['weights']
-            self.biases = data['weights']
+            self.weights = data['weights'][ind]
+            self.biases = data['weights'][ind]
+            self.inputs = data['inputs'][ind]
         except:
             for i in range(inputCount):
                 for j  in range(outputCount):

@@ -8,6 +8,7 @@ from utils import *
 
 
 current_generation = 0 # Generation counter
+CHILDREN_CARS = 500
 
 
 def run_simulation(total_generations):
@@ -16,11 +17,11 @@ def run_simulation(total_generations):
     clock = pygame.time.Clock()
     generation_font = pygame.font.SysFont("Arial", 30)
     alive_font = pygame.font.SysFont("Arial", 20)
-    game_map = pygame.image.load('map.png').convert() # Convert Speeds Up A Lot
+    game_map = pygame.image.load('map1.png').convert() # Convert Speeds Up A Lot
 
     cars = []
     nets = []
-    for i in range(10):
+    for i in range(CHILDREN_CARS):
         cars.append(Car())
         nets.append(NN([5, 6, 4]))
         
@@ -47,11 +48,11 @@ def run_simulation(total_generations):
                 else:
                     ded.append(i)
 
-            # if still_alive == 0:
-            #     break
+            if still_alive == 0:
+                break
 
             counter += 1
-            if counter == 250: # Stop After About 20 Seconds
+            if counter == 20*30: # Stop After About 20 Seconds
                 break
 
             # Draw Map And All Cars That Are Alive
@@ -86,7 +87,8 @@ def run_simulation(total_generations):
         data_dict = {
             "Length": len(nets[Best_car].levels),
             "weights": [nets[Best_car].levels[0].weights, nets[Best_car].levels[1].weights],
-            "biases": [nets[Best_car].levels[0].biases,nets[Best_car].levels[1].biases]
+            "biases": [nets[Best_car].levels[0].biases,nets[Best_car].levels[1].biases],
+            "inputs": [nets[Best_car].levels[0].inputs,nets[Best_car].levels[1].inputs]
         }
         with open(database, "w") as f:
             json.dump(data_dict, f)
@@ -96,12 +98,12 @@ def run_simulation(total_generations):
 
         cars = []
         nets = []
-        for i in range(10):
+        for i in range(CHILDREN_CARS):
             cars.append(Car())
             nets.append(NN([5, 6, 4]))
-            cars[-1].speed = 28
-            nets[-1].mutate(nets[-1], 0.2)
-        print("nets: ", nets)
+            # cars[-1].speed = 28
+        for i in range(10,CHILDREN_CARS):
+            nets[i].mutate(nets[i], 0.15)
         
 if __name__ == "__main__":
     run_simulation(100)

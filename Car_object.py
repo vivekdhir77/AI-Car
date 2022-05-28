@@ -7,7 +7,7 @@ class Car:
 
     def __init__(self):
         # Load Car Sprite and Rotate
-        self.sprite = pygame.image.load('car.png').convert() # Convert Speeds Up A Lot
+        self.sprite = pygame.image.load('carp.png').convert() # Convert Speeds Up A Lot
         self.sprite = pygame.transform.scale(self.sprite, (CAR_SIZE_X, CAR_SIZE_Y))
         self.rotated_sprite = self.sprite 
 
@@ -16,7 +16,7 @@ class Car:
         self.angle = 0
         self.speed = 0
 
-        self.speed_set = True # Flag For Default Speed Later on
+        self.speed_set = False # Flag For Default Speed Later on
 
         self.center = [self.position[0] + CAR_SIZE_X / 2, self.position[1] + CAR_SIZE_Y / 2] # Calculate Center
 
