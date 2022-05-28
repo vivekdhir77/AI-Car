@@ -87,12 +87,29 @@ def run_simulation(total_generations):
             "Length": len(nets[Best_car].levels),
             "weights": [nets[Best_car].levels[0].weights, nets[Best_car].levels[1].weights],
             "biases": [nets[Best_car].levels[0].biases,nets[Best_car].levels[1].biases],
-            "inputs": [nets[Best_car].levels[0].inputs,nets[Best_car].levels[1].inputs]
+            "inputs": [nets[Best_car].levels[0].inputs,nets[Best_car].levels[1].inputs],
+            "reward": cars[Best_car].get_reward()
         }
-        with open(database, "w") as f:
-            json.dump(data_dict, f)
-        f.close()
 
+        
+        if BEST_CAR_STORE:
+            old_reward = -1
+            try:
+                f = open('database.json')
+                data = json.load(f)
+                old_reward = data['reward']
+            except:
+                with open(database, "w") as f:
+                    json.dump(data_dict, f)
+                f.close()
+            if(cars[Best_car].get_reward()>old_reward):
+                with open(database, "w") as f:
+                    json.dump(data_dict, f)
+                f.close()
+        else:
+            with open(database, "w") as f:
+                json.dump(data_dict, f)
+            f.close()
         logs(current_generation,Best_car, nets)
 
         cars = []

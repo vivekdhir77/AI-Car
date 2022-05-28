@@ -15,6 +15,11 @@ class NN:
         return outputs
 
     def mutate(self, network, amount = 1):
+        # print("1: ",len(network.levels))
+        # print("2: ",len(network.levels[0].biases))
+        # print("3: ",len(network.levels[0].weights))
+        # print("4: ",len(network.levels[0].weights[0]))
+
         for level in network.levels:
             for i in range(len(level.biases)):
                 level.biases[i]=lerp(level.biases[i], random.random()*2-1,amount)
@@ -24,7 +29,7 @@ class NN:
                     level.weights[i][j]=lerp(level.weights[i][j],random.random()*2-1,amount)
 
 class Level:
-    def __init__(self,inputCount,outputCount, ind= -1):
+    def __init__(self,inputCount,outputCount, ind):
         self.inputs =[0 for i in range(inputCount)]
         self.outputs = [0 for i in range(outputCount)]
         self.biases = [0 for i in range(outputCount)]
