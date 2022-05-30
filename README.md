@@ -20,7 +20,7 @@
 
 <img src="imgs/simulation.png">
 <img src="imgs/simulation1.png">
-<img src="imgs/simulation2.png">
+<img src="imgs/Simulation2.png">
 
 
 ## Instructions
@@ -58,7 +58,6 @@ $python main.py
                     - parameters: Takes a network object (class: NN), Inputs (radars outputs)
                 <br>
                 - mutate(self, network, amount = 1) : Once stored Detalis about weights and biases of a particular generation we use linear interpolation to mutate by some rate so that we might possibly get a better car.
-
                     - parameters: Takes a network object (class: NN), Mutation rate
         - Level : This is a supporting class for the Class NN.
             - <u>Methods</u>
