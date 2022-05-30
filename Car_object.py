@@ -35,7 +35,7 @@ class Car:
     def draw_radar(self, screen): # Draws All Sensors / Radars
         for radar in self.radars:
             position = radar[0]
-            pygame.draw.line(screen, (0, 255, 0), self.center, position, 1)
+            pygame.draw.line(screen, (255, 0, 0), self.center, position, 1)
             pygame.draw.circle(screen, (0, 255, 0), position, 5)
 
     def check_collision(self, game_map):
