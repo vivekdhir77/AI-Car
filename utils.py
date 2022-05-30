@@ -1,13 +1,14 @@
 import pygame
 from config import *
 
-def logs(current_generation,Best_car,  nets):
+def logs(current_generation,Best_car,  nets, cars):
     print("Generation: ", current_generation)
     print("Length: ",len(nets[Best_car].levels))
     print("0 weights: ",nets[Best_car].levels[0].weights)
     print("1 weights: ",nets[Best_car].levels[1].weights)
     print("0 biase: ",nets[Best_car].levels[0].biases)
     print("1 biases: ",nets[Best_car].levels[1].biases)
+    print("Reward : ",cars[Best_car].get_reward())
     print("\n\n\n")
     print("-------------------------------------------------------------------------------")
 

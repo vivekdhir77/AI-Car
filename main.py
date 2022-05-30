@@ -110,7 +110,7 @@ def run_simulation(total_generations):
             with open(database, "w") as f:
                 json.dump(data_dict, f)
             f.close()
-        logs(current_generation,Best_car, nets)
+        logs(current_generation,Best_car, nets, cars)
 
         cars = []
         nets = []
