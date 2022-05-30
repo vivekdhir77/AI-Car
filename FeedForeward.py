@@ -43,7 +43,7 @@ class Level:
             f = open('database.json')
             data = json.load(f)
             self.weights = data['weights'][ind]
-            self.biases = data['weights'][ind]
+            self.biases = data['biases'][ind]
             self.inputs = data['inputs'][ind]
         except:
             for i in range(inputCount):
