@@ -1,5 +1,7 @@
 import random
-import math
+from utils import lerp
+from config import DATABASE
+
 class NN:
     def __init__(self, neuronCount):
         self.levels = []
@@ -15,7 +17,8 @@ class NN:
         return outputs
 
     def mutate(self, network, amount = 1):
-        # print("1: ",len(network.levels))
+        # debugging
+        # print("1: ",len(network.levels)) 
         # print("2: ",len(network.levels[0].biases))
         # print("3: ",len(network.levels[0].weights))
         # print("4: ",len(network.levels[0].weights[0]))
@@ -40,7 +43,7 @@ class Level:
 
         # self.randomize()
         try:
-            f = open('database.json')
+            f = open(DATABASE)
             data = json.load(f)
             self.weights = data['weights'][ind]
             self.biases = data['biases'][ind]
@@ -67,5 +70,3 @@ class Level:
             else:
                 level.outputs[i]=0
         return level.outputs
-def lerp(A, B, t): # linear interpolation
-    return A+(B-A)*t;

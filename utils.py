@@ -1,5 +1,5 @@
 import pygame
-from config import *
+from config import ROTATION_RATE, SPEED, MAX_SPEED
 
 def logs(current_generation,Best_car,  nets, cars):
     print("Generation: ", current_generation)
@@ -45,3 +45,6 @@ def keyboard():
     if keys[pygame.K_s]:
         choice[3] = 1
     return choice
+
+def lerp(A, B, t): # linear interpolation (used for mutation)
+    return A+(B-A)*t;
