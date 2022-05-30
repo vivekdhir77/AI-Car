@@ -24,7 +24,6 @@
 
 
 ## Instructions
-<hr>
 
 1. Clone the repository (currently private repo) <br> 
 ```
@@ -43,7 +42,6 @@ $python main.py
 ```
 
 ## File structure
-<hr>
 <img src="imgs/Tree.png">
 
 - `main.py`
@@ -96,6 +94,5 @@ $python main.py
 - `README.md` 
 
 ## Neural Network (Detalied explanation) 
-<hr>
 
 #### This section give the detailed explanation of neural network implementation used the project
