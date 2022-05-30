@@ -35,7 +35,7 @@ def run_simulation(total_generations):
                 if event.type == pygame.QUIT:
                     sys.exit(0)
 
-            choice  = keyboard()
+            # choice  = keyboard()
             move(cars, nets)
             
             still_alive = 0

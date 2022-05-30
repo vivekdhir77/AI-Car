@@ -70,7 +70,7 @@ class Car:
         # Only When Having 4 Output Nodes With Speed Up and Down
         if not self.speed_set:
             self.speed = MAX_SPEED
-            self.speed_set = True
+            # self.speed_set = True
 
         # Get Rotated Sprite And Move Into The Right X-Direction
         # Don't Let The Car Go Closer Than 20px To The Edge
