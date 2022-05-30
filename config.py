@@ -9,7 +9,7 @@ BEST_CAR_STORE = True # if true only stores best car in storage and doesn't chan
 NN_layers = [5, 6, 4]
 MUTATION_RATE = 0.3
 
-MAP = 'imgs/map.png'
+MAP = 'imgs/map1.png'
 CAR = 'imgs/carp.png'
 FONT = "Arial"
 FPS = 60

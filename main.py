@@ -51,7 +51,7 @@ def run_simulation(total_generations):
                 break
 
             counter += 1
-            if counter == 20*30: # Stop After About 20 Seconds
+            if counter == 1000: # Stop After About 20 Seconds
                 break
 
             # Draw Map And All Cars That Are Alive
