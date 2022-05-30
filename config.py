@@ -15,7 +15,7 @@ SPEED_OUTPUT_NODE = False
 BEST_CAR_STORE = True # if true only stores best car in storage and doesn't change storage every generation
 DATABASE = 'storage/DATABASE.json'
 
-MAP = 'imgs/map1.png'
+MAP = 'dataset/map1.png'
 CAR = 'imgs/carp.png'
 FONT = "Arial"
 
