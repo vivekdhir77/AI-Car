@@ -13,10 +13,9 @@
 
 
 ## About
-<hr>
 
-## AI car training simulation
-#### <u>UNIQUENESS</u> : This project is made using Feedforeward Neural network (`without using any machine learning library`)
+# AI car training simulation
+#### <u><b>UNIQUENESS</b></u> : This project is made using Feedforeward Neural network (`without using any machine learning library`)
 
 <img src="imgs/simulation.png">
 <img src="imgs/simulation1.png">
