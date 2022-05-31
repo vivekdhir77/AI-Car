@@ -108,7 +108,12 @@ $python main.py
     <img src='imgs/NNe2.png'>
 
     - Why did we use FeedForeward neural network?
-        
         - Simple Architechure
+
+## Genetic Algorithm
+
+- In the genetic algorithm part we have 2 main parts (mutating and crossover). In this project we are just using mutation.
+- The below image gives the overview of the code flow
+<img src="imgs/GeneticAlgo.png">
 
     
