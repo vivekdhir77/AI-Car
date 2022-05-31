@@ -8,7 +8,7 @@
 - <b>About<b>
 - <b>Instructions<b>
 - <b>File Structure<b>
-- <b>Neural Network (Detalied explanation)<b>
+- <b>Neural Network (explanation)<b>
 - <b>Genetic Algorithm explained<b>
 
 
@@ -91,6 +91,24 @@ $python main.py
 - `license.md` - contains license
 - `README.md` 
 
-## Neural Network (Detalied explanation) 
+## Neural Network (explanation) 
 
 #### This section give the detailed explanation of neural network implementation used the project
+
+- Our neural network architechure 
+    - 5 input nodes, 1 hidden layer (6 nodes), 4 output nodes
+
+    - The 5 radar readings are the inputs.
+    
+    - The 4 outputs indicate moving foreward, backward, left and right.
+
+    - The outputs nodes return either 0 or 1
+
+    <img src='imgs/NNe1.png'>
+    <img src='imgs/NNe2.png'>
+
+    - Why did we use FeedForeward neural network?
+        
+        - Simple Architechure
+
+    
