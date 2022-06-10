@@ -15,7 +15,7 @@
 ## About
 
 # AI car training simulation
-#### <u><b>UNIQUENESS</b></u> : This project is made using Feedforeward Neural network (`without using any machine learning library`)
+#### <u><b>UNIQUENESS</b></u> : This project is made using Feedforward Neural network (`without using any machine learning library`)
 
 <img src="imgs/simulation.png">
 <img src="imgs/simulation1.png">
@@ -49,11 +49,11 @@ $python main.py
 
 - `storage/database.json` - (Initially you can empty this file) In this file the project stores the weights and biases of the best car in every generation. 
 
-- `FeedForeward.py` 
+- `FeedForward.py` 
     - <u>Class:</u>
         - NN : This is the neural network class
             - <u>Methods</u>
-                - feedForeward(self, givenInputs, network) : Returns output for the Neural network for the given inputs (The inputs essentially are the distance between car and border - radars outputs)
+                - feedForward(self, givenInputs, network) : Returns output for the Neural network for the given inputs (The inputs essentially are the distance between car and border - radars outputs)
                     - parameters: Takes a network object (class: NN), Inputs (radars outputs)
                 <br>
                 - mutate(self, network, amount = 1) : Once stored Detalis about weights and biases of a particular generation we use linear interpolation to mutate by some rate so that we might possibly get a better car.
@@ -63,7 +63,7 @@ $python main.py
                 - __init__(self,inputCount,outputCount, ind) : Initialising weights and biases to random values between [-1, 1] if the database is empty
                     - parameters: Takes no. of inputs, no. of outputs, (ind) layer index
                 <br>
-                - feedForward(self, givenInputs,level) : FeedForeward's layer by layer
+                - feedForward(self, givenInputs,level) : FeedForward's layer by layer
                     - parameters: Takes givenInputs (class: NN), level
 
 - `Car_object.py` - It has the car class with the follwing methods
@@ -100,7 +100,7 @@ $python main.py
 
     - The 5 radar readings are the inputs.
     
-    - The 4 outputs indicate moving foreward, backward, left and right.
+    - The 4 outputs indicate moving forward, backward, left and right.
 
     - The outputs nodes return either 0 or 1
 
