@@ -24,7 +24,7 @@
 
 ## Instructions
 
-1. Clone the repository (currently private repo) <br> 
+1. Clone the repository <br> 
 ```
 $git clone https://github.com/vivekdhir77/AI-Car.git
 ```
